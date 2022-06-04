@@ -57,9 +57,9 @@ public class EmailSenderImpl implements EmailSender {
             e.printStackTrace();
         }
 
-        String USER_NAME = "email";
-        String PASSWORD = "pass";
-        String RECIPIENT = "email";
+        String USER_NAME = "email from";
+        String PASSWORD = "password";
+        String RECIPIENT = "email to";
         String[] to = {RECIPIENT};
         String host = "smtp.mail.ru";
 
