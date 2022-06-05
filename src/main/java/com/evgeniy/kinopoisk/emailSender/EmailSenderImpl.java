@@ -1,10 +1,11 @@
-package com.evgeniy.kinopoisk.sender;
+package com.evgeniy.kinopoisk.emailSender;
 
 import com.evgeniy.kinopoisk.model.FilmsModel;
 import com.evgeniy.kinopoisk.model.FilmsModelXml;
 import com.evgeniy.kinopoisk.service.KinopoiskIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -23,13 +24,16 @@ import java.util.Properties;
 @RequiredArgsConstructor
 public class EmailSenderImpl implements EmailSender {
 
-
     private final KinopoiskIService kinopoiskIService;
 
-    @Override
-    public void EmailSend() throws MessagingException {
+    final String USER_NAME = "email from";
+    final String PASSWORD = "password";
+    final String RECIPIENT = "email to";
+    final String[] to = {RECIPIENT};
+    final String host = "smtp.mail.ru";
 
-        long startTime = System.currentTimeMillis();
+    @Override
+    public void emailSend() throws MessagingException {
 
         List<FilmsModel> filmsModelXml = kinopoiskIService.findAllDb();
 
@@ -47,21 +51,9 @@ public class EmailSenderImpl implements EmailSender {
 
             jaxbMarshaller.marshal(modelFile, XMLfile);
 
-            long endTime = System.currentTimeMillis();
-            double seconds = (endTime - startTime) / 1000.0;
-
-            System.out.println("Export duration : " + seconds + " seconds");
-
-
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
-        String USER_NAME = "email from";
-        String PASSWORD = "password";
-        String RECIPIENT = "email to";
-        String[] to = {RECIPIENT};
-        String host = "smtp.mail.ru";
 
         Properties props = System.getProperties();
         props.put("mail.smtp.starttls.enable", "true");
@@ -72,7 +64,6 @@ public class EmailSenderImpl implements EmailSender {
         props.put("mail.smtps.user", USER_NAME);
         props.put("mail.smtps.starttls.enable", "true");
         props.put("mail.host", "smtp.mail.ru");
-
 
         Session session = Session.getDefaultInstance(props, null);
 

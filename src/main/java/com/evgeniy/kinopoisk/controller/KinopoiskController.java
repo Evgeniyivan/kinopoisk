@@ -4,7 +4,7 @@ package com.evgeniy.kinopoisk.controller;
 import com.evgeniy.kinopoisk.model.FilmsModel;
 import com.evgeniy.kinopoisk.model.KinopoiskDbFilter;
 import com.evgeniy.kinopoisk.model.KinopoiskDtoFilter;
-import com.evgeniy.kinopoisk.sender.EmailSender;
+import com.evgeniy.kinopoisk.emailSender.EmailSender;
 import com.evgeniy.kinopoisk.service.KinopoiskIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +41,6 @@ public class KinopoiskController {
     }
     @PostMapping("/mailsend")
     public void EmailSend() throws MessagingException {
-        emailSender.EmailSend();
+        emailSender.emailSend();
     }
 }

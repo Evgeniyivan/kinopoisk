@@ -1,6 +1,8 @@
 package com.evgeniy.kinopoisk.client;
 
-import com.evgeniy.kinopoisk.model.*;
+import com.evgeniy.kinopoisk.model.KinopoiskDtoFilter;
+import com.evgeniy.kinopoisk.model.KinopoiskFilm;
+import com.evgeniy.kinopoisk.model.TotalKinopoiskApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
@@ -8,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
