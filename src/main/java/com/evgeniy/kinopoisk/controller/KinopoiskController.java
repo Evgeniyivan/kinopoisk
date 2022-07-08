@@ -39,6 +39,7 @@ public class KinopoiskController {
     public List<FilmsModel> getFilmsFromDb(KinopoiskDbFilter filter) {
         return kinopoiskIService.getFilmsFromDb(filter);
     }
+
     @PostMapping("/mailsend")
     public void EmailSend() throws MessagingException {
         emailSender.emailSend();

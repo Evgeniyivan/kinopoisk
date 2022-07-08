@@ -2,9 +2,10 @@
 create table films (
     id integer not null  auto_increment,
     filmId integer,
-    filmName varchar(255),
-    year int,
+    name_ru varchar(255),
+    name_original varchar(255),
+    year long,
     rating double,
-    description varchar(3000),
+    rating_imdb double,
     primary key (id))
 #     ENGINE=InnoDB DEFAULT CHARSET=utf8;

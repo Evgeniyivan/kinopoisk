@@ -32,7 +32,6 @@ public class KinopoiskServiceImpl implements KinopoiskIService {
     public List<FilmsModel> findAllDb() {
 
         return filmRepository.findAll();
-
     }
 
     @Override
