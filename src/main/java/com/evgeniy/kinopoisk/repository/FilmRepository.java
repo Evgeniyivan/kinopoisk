@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 @EnableJpaRepositories
 public interface FilmRepository extends JpaRepository<FilmsModel, Long> {
-
     boolean existsByKinopoiskId(Long kinopoiskId);
-
 }

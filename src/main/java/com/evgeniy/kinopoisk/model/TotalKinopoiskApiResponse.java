@@ -10,10 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TotalKinopoiskApiResponse {
-
     private Integer total;
-
     private Integer totalPages;
-
     private List<KinopoiskFilm> items;
 }

@@ -8,7 +8,6 @@ import com.evgeniy.kinopoisk.model.KinopoiskDtoFilter;
 import com.evgeniy.kinopoisk.repository.FilmRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -20,17 +19,13 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class KinopoiskServiceImpl implements KinopoiskIService {
-
     private final KinopoiskClient kinopoiskClient;
     private final FilmRepository filmRepository;
     private final FilmMapper filmMapper;
-
     @PersistenceContext
     private final EntityManager entityManager;
-
     @Override
     public List<FilmsModel> findAllDb() {
-
         return filmRepository.findAll();
     }
 

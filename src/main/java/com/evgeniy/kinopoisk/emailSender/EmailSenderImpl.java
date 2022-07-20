@@ -5,7 +5,6 @@ import com.evgeniy.kinopoisk.model.FilmsModelXml;
 import com.evgeniy.kinopoisk.service.KinopoiskIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -23,15 +22,12 @@ import java.util.Properties;
 @Service
 @RequiredArgsConstructor
 public class EmailSenderImpl implements EmailSender {
-
     private final KinopoiskIService kinopoiskIService;
-
     final String USER_NAME = "email from";
     final String PASSWORD = "password";
     final String RECIPIENT = "email to";
     final String[] to = {RECIPIENT};
     final String host = "smtp.mail.ru";
-
     @Override
     public void emailSend() throws MessagingException {
 

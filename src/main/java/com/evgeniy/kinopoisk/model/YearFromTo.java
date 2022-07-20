@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class YearFromTo {
-
     private Long yearFrom;
-
     private Long yearTo;
 
 }

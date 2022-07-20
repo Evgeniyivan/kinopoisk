@@ -8,7 +8,6 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -16,11 +15,8 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class KinopoiskClientImpl implements KinopoiskClient {
-
     HttpHeaders httpHeaders = new HttpHeaders();
-
     private final RestTemplate restTemplate;
-
     final String URL = "https://kinopoiskapiunofficial.tech/api/v2.2/films";
 
     @Override
@@ -39,9 +35,7 @@ public class KinopoiskClientImpl implements KinopoiskClient {
         } else {
             return null;
         }
-
     }
-
     @Override
     public String generateUrl(KinopoiskDtoFilter filter) {
 
@@ -81,7 +75,6 @@ public class KinopoiskClientImpl implements KinopoiskClient {
 
         optionalFilter.map(KinopoiskDtoFilter::getKeyword)
                 .ifPresent(keyword -> uriComponentsBuilder.queryParam("keyword", keyword));
-
 
         return uriComponentsBuilder.build().toUriString();
     }

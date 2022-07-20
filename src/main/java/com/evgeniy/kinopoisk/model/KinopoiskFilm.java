@@ -8,17 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class KinopoiskFilm {
-
     private Long kinopoiskId;
-
     private String nameRu;
-
     private String nameOriginal;
-
     private Integer year;
-
     private Integer ratingKinopoisk;
-
     private Integer ratingImdb;
-
 }

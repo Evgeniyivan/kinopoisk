@@ -1,7 +1,7 @@
 # drop table films;
 create table films (
     id integer not null  auto_increment,
-    filmId integer,
+    kinopoisk_id integer,
     name_ru varchar(255),
     name_original varchar(255),
     year long,
